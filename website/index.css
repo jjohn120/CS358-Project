@@ -39,13 +39,24 @@ nav {
   justify-content: space-around;
 }
 
+nav a {
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
 #body {
   padding: 14px 16px;
 }
 
 .dropdown {
+  display: inline-block;
   overflow: hidden;
   float: right;
+  color: black;
+  text-decoration: none;
+  font-size: 1.5em;
 }
 
 .dropdown .dropbtn {
@@ -53,10 +64,10 @@ nav {
   border: none;
   outline: none;
   color: black;
-  padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
   font-size: inherit;
+  margin: 0;
 }
 
 .dropdown-content {
@@ -65,6 +76,7 @@ nav {
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
 .dropdown-content a {
