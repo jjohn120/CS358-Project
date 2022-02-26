@@ -1,10 +1,13 @@
-<?php
+<html>
+<body>
 
-if(isset($_POST['textdata']))
-{
-$data=$_POST['textdata'];
-$fp = fopen('data.txt', 'a');
-fwrite($fp, $data);
-fclose($fp);
-}
-?>
+Thank you, <?php echo $_GET["name"]; ?> <?php echo $_GET["lname"]; ?><br>
+Your information will be processed by the RLC
+
+
+</address>
+
+</address>
+
+</body>
+</html>
