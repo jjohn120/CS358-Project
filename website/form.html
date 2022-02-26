@@ -3,24 +3,28 @@
 
 <body>
 <div id='form'>
-<form action="form.php" method="get">
+<form action="form.php" method="GET" >
   <p><b>Host information</b></p><br>
 
-  <label for="fname">Host First Name </label><br>
+  Host Email address<br>
+  <input type="text" name="Email" ><br>
+  Host First Name<br>
+  <input type="text"  name="name"><br>
+  Host Last name<br>
+  <input type="text" name="lname" ><br>
+  Host ID number:<br>
+  <input type="number" size="7" maxlength="7" ><br> <!--code this where only numbers of 7 digits are valid-->
+  Host Building<br>
   <input type="text" ><br>
-  <label for="lname">Host Last name:</label><br>
-  <input type="text"  ><br>
-  <label for="ID">Host ID number:</label><br>
-  <input type="number" size="7" maxlength="7"><br> <!--code this where only numbers of 7 digits are valid-->
-  <label for="Building">Host Building</label><br>
-  <input type="text" ><br>
-  <label for="room number">Host Room number:</label><br>
-  <input type="number" size="3" maxlength="3"><br>
-  <label for="phone number">Host phone number:</label><br>
-  <input type="number" size="11" maxlength="11"><br><br>
+  Host Room number:<br>
+  <input type="number" size="3" maxlength="3" ><br>
+  Host phone number:<br>
+  <input type="number" size="11" maxlength="11" ><br><br>
 
 <p><b>Guest information</b></p>
 
+  <label for="Email">Guest Email address</label><br>
+  <input type="text" ><br>
   <label for="fname">Guest First Name </label><br>
   <input type="text" ><br>
   <label for="lname">Guest Last name:</label><br>
@@ -43,6 +47,8 @@
     <option value ="yes">Yes</option>
     <option value="no">No</option>
   </select>
+ <br><br>
+  <input type="submit">
 
 
 
