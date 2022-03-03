@@ -8,40 +8,80 @@
   <body>
 
     <nav>
-    <div id='head'>
+      <div id='head'>
        <ul>
+         <div class="logo">
+           <img src="SecondarySignature_Full_Web.png" alt="Valparaiso University Signature" height="50px">
+         </div>
          <div class="mobile-menu">
-         <li><a class="menu" onclick="myFunction()">Menu</a></li>
+           <li><a class="menu" onclick="myFunction()">Menu</a></li>
          </div>
          <div class="nav-links" id='navbar'>
-         <li><a href="login.html">Sign In</a></li>
-         <li><div class="dropdown">
-           <button class="dropbtn">Resources</button>
-           <div class="dropdown-content">
-             <a href="https://www.valpo.edu/reslife/current-students/overnight-guest-policy-registration/" target="_blank" rel="noopener noreferrer">
-               Overnight guest policy</a>
-             <a href="https://www.valpo.edu/reslife/residential-life-information/residential-life-policies/" target="_blank" rel="noopener noreferrer">
-               Residential life policies</a>
-             <a href="http://valpo.edu/reslife" target="_blank" rel="noopener noreferrer">
-               Residential life website</a>
+           <li><a href=index.html>Home</a></li>
+           <li><a href="login.html">Sign In</a></li>
+           <li><div class="dropdown">
+             <button class="dropbtn">Resources</button>
+               <div class="dropdown-content">
+                 <a href="https://www.valpo.edu/reslife/current-students/overnight-guest-policy-registration/" target="_blank" rel="noopener noreferrer">
+                   Overnight guest policy</a>
+                 <a href="https://www.valpo.edu/reslife/residential-life-information/residential-life-policies/" target="_blank" rel="noopener noreferrer">
+                   Residential life policies</a>
+                 <a href="http://valpo.edu/reslife" target="_blank" rel="noopener noreferrer">
+                   Residential life website</a>
+               </div>
+           </div><li>
+           <li><a href="info.html">Form</a></li>
            </div>
-         </div><li>
-         <li><a href="info.html">Form</a></li>
-         <li><a href=index.html>Home</a></li>
-         </div>
-         <div class="logo">
-         <li><a>[insert image]</a></li>
-         </div>
-       </ul>
-     </div></nav>
+         </ul>
+       </div>
+     </nav>
      <br><br>
-     <div>[possibly image here]</div>
-     <br>
 
     <div id='body'>
-    <h2>Welcome to Reslife Overnight Guest Registration</h2>
-    <br><br>
-    <p>Are you here to register a guest? Continue to form here or click the link above.</p>
+      <h2>Welcome to Reslife Overnight Guest Registration</h2>
+      <br><br>
+      <p>Are you here to register a guest? Continue to form <a href="info.html">here</a> or click the link above.</p>
     </div>
+    <br><br>
+
+    <div><img src="20210821 JLH Move In Day-004.jpg" alt="Photo of residence hall with the text Go Beacons written on its windows" width="100%"></div>
+
+
+
+    <div id="footer">
+      <b><h3>CONTACT US</h3></b> <br>
+      <b><h4>Residential Life</h4> </b>
+      <p>Harre Union, 250 <br>
+      1509 Chapel Drive <br>
+      Valparaiso, IN. 46383</p>
+      <br>
+
+      <p><b>Email:</b> reslife@valpo.edu <br>
+      <b>Phone:</b> 219.464.5413 <br>
+      <b>Fax:</b> 219.464.5256</p>
+    </div>
+
+    <script>
+      function classToggle() {
+        const navs = document.querySelectorAll('.nav-links')
+
+        navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+      }
+
+    document.querySelector('.mobile-menu')
+      .addEventListener('click', classToggle);
+
+
+      const dropdownBtn = document.querySelector('.dropbtn');
+      const menuContent = document.querySelector('.dropdown-content');
+      dropdownBtn.addEventListener('click',()=>{
+         if(menuContent.style.display===""){
+            menuContent.style.display="flex";
+         } else {
+            menuContent.style.display="";
+         }
+      });
+    </script>
+
   </body>
 </html>
