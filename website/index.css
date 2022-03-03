@@ -9,6 +9,13 @@ nav ul {
   overflow: hidden;
 }
 
+.logo {
+  display: flex;
+  align-self: start;
+  padding: 14px 16px;
+
+}
+
 nav li {
   display: flex;
   float: right;
@@ -20,15 +27,16 @@ nav li {
 
 nav li a {
   color: #F0F0F0;
-  padding: 14px 16px;
+  padding: 20px 16px;
   text-align: center;
   text-decoration: none;
   font-size: 1.5em;
 }
 
 #head {
-  background-color: #554332;
+  background-color: #2f1400;
   padding: 16px;
+  position: sticky;
 }
 
 nav {
@@ -48,7 +56,7 @@ nav a {
 
 .dropbtn {
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 20px 16px;
   color: #F0F0F0;
   font-size: 16px;
   border: none;
@@ -78,9 +86,6 @@ nav a {
   text-align: left;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
 
 .mobile-menu {
   display: none;
@@ -99,11 +104,34 @@ nav a {
     display: none;
   }
 
-  .mobile-menu {
-    display: block;
+  .logo {
+    align-self: flex-start;
+    position: left;
   }
+
+  .mobile-menu {
+    float: right;
+    align-self: flex-end;
+    display: initial;
+    position: right;
+    cursor: pointer;
+  }
+
+  .Navbar__ToggleShow {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+    }
+
 }
 
 #body {
   padding: 14px 16px;
+  text-color: #2f1400;
+}
+
+#footer {
+  padding: 14px 16px;
+  text-color: #2f1400;
+  bottom: 0px;
 }
