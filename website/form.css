@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#body {
+  margin: 50px;
+  padding: 16px 14px;
+}
+
+body {
+  background-color: #613318;
+}
+
+#form {
+  align: center;
+  background-color: white;
+  padding: 16px 14px;
+}
+
+.collect {
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  padding: 1em;
+}
+
+input {
+  border: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.host-info, .guest-info  {
+  align-content: center;
+  justify-content: flex-start;
+  padding: 1em;
+}
+
+.registration-info {
+  justify-content: space-between;
+  padding: 1em;
+}
+
+@media screen and (max-width: 800px) {
+  .collect {
+    flex-direction: column;
+  }
+}
