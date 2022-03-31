@@ -1,105 +1,104 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Guest Registration Form</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="SecondarySignature_Full_Web.png">
-    <link rel="stylesheet" href="form.css">
-  </head>
-
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Reslife Guest form </title>
+	<link rel="stylesheet" >
+</head>
 <body>
+	<div id="wrapper">
+		<form onsubmit="sendEmail(); reset(); return false;">
+			<h2>Reslife Guest form</h2>
+      <br>
+      <p>Host information</p>
 
-<div id='body'>
+			<input type="text" name="fname" id="fname" placeholder="Host first name" required><br>
+      <input type="text" name="lname" id="lname" placeholder="Host last name" required><br>
+			<input type="email" id="email" name="email" placeholder="Host Email Address" required><br>
+      <input type="email" id="remail" name="email" placeholder="Host RLC Email Address" required><br>
+			<input type="number" name="ID" id="id" placeholder="Host ID number" required><br>
+			<input type="text" name="building" id="building" placeholder="Host building" required><br>
+      <input type="number" name="pnum" id="pnum" placeholder="Host Phone number" required><br>
 
-  <div id='form'>
-  <form action="form.php" method="GET" >
-    <div class="host-info">
-      <p><b>Host information</b></p><br>
+      <br> <p>Guest information</p><br>
+      <input type="text" name="g_fname" id="g_fname" placeholder="Guest first name" required><br>
+      <input type="text" name="g_lname" id="g_lname" placeholder="Guest last name" required><br>
+			<input type="email" id="g_email" name="g_email" placeholder="Guest Email Address" required><br>
+			<input type="number" name="g_ID" id="g_id" placeholder="Guest ID number" required><br>
+			<input type="text" name="g_building" id="g_building" placeholder="Guest building" required><br>
+      <input type="number" name="g_pnum" id="g_pnum" placeholder="Guest Phone number" required><br>
+      <input type="number" name="gem_pnum" id="gem_pnum" placeholder="Guest Emergency contact Phone number" required><br>
+      <input type="name" name="gem_enum" id="Relationship" placeholder="Guest Emergency contact Relationship" required><br>
+      <label for="Date">Check in date: </label>
+      <input type="date" name="date" id="date" placeholder = "Date of arrival" required><br>
+      <label for="Date">Check out date: </label>
+      <input type="date" name="co_date" id="date_d" placeholder = "Date of departure" required><br><br>
+      <label for="yes_or_no">Do you have a roommate?</label><br>
+			<input type="checkbox" id = "roommate"  name="Roomate?" value="Yes" /> Yes
+			<input type="checkbox"  id = "roommate" name="Roomate?" value="No" /> No
 
-      <div class="collect">
-        <span>Host Email address<br>
-        <input type="text" name="Email" placeholder="Host email" required><br></span>
-        <span>Host First Name<br>
-        <input type="text" name="name" placeholder="first name" required><br></span>
-        <span>Host Last name<br>
-        <input type="text" name="lname" placeholder="last name" required><br></span>
-      </div>
-      <div class="collect">
-        <span>Host ID number:<br>
-        <input type="number" size="7" maxlength="7" placeholder="Host ID" required><br></span>
-        <span>Host Building<br>
-        <input type="text" placeholder="Host building required"><br></span>
-        <span>Host Room number:<br>
-        <input type="number" size="3" maxlength="3" placeholder="Room number" required><br></span>
-      </div>
-      <div class="collect">
-        <span>Host phone number:<br>
-          <sub>Include country code, so that it's written as 15555555555</sub><br>
-        <input type="tel" placeholder="Host number" maxlength="11"
-         pattern="[0-9]{1}[0-9]{3}[0-9]{3}[0-9]{4}" required><br></span>
-      </div>
+			<br><br>
+
+			<label for="yes_or_no">If so have they agreed to you having a guest?</label><br>
+			<input type="checkbox" id = "agreed"  name="Roomate?" value="Yes" /> Yes
+			<input type="checkbox"  id = "agreed" name="Roomate?" value="No" /> No
+			<input type="checkbox"  id = "agreed" name="Roomate?" value="I don't have a roomate" /> I don't have a roomate
+
+			<br><br>
+			<label for="yes_or_no">Is your guest a Valparaiso University resident? </label><br>
+			<input type="checkbox" id = "agreed2"  name="Roomate?" value="Yes" /> Yes
+			<input type="checkbox"  id = "agreed2" name="Roomate?" value="No" /> No
+
+			<br>
+
+			<label for="Vaccine card">If not please upload an image of your guest's vaccine card here:</label><br>
+			<input id="vaccine" type="file" accept="image/*"><br>
+
+			<br><br>
+
+
+
+
+			<button type="submit" name="submit">Submit</button>
+		</form>
   </div>
-
-  <div class="guest-info">
-    <hr><br>
-
-    <p><b>Guest information</b></p><br>
-
-    <div class="collect">
-      <span><label for="Email">Guest Email address</label><br>
-      <input type="text" id="Email" placeholder="Guest email" required><br></span>
-      <span><label for="fname">Guest First Name </label><br>
-      <input type="text" id="fname" placeholder="first name" required><br></span>
-      <span><label for="lname_guest">Guest Last name:</label><br>
-      <input type="text" id="lname_guest" placeholder="last name" required><br></span>
-    </div>
-    <div class="collect">
-      <span><label for="phone_number">Guest phone number:</label><br>
-        <sub>Include country code</sub><br>
-      <input type="tel" id="phone_number" placeholder="Guest number" maxlength="11"
-       pattern="[0-9]{1}[0-9]{3}[0-9]{3}[0-9]{4}" required><br></span>
-    </div>
-    <div class="collect">
-      <span><label for="cname">Guest Emergency Contact Name </label><br>
-      <input type="text" id="cname" placeholder="Emergency contact"><br></span>
-      <span><label for="cnumber">Guest Emergency Contact phone number:</label><br>
-        <sub>Include country code</sub><br>
-      <input type="tel" id="cnumber" placeholder="Emergency number" maxlength="11"
-       pattern="[0-9]{1}[0-9]{3}[0-9]{3}[0-9]{4}"><br></span>
-    <span>
-      <label for="relationship">Guest Emergency Contact Relationship</label><br>
-      <input type="text" id="relationship" placeholder="Contact relationship"><br></span>
-    </div>
-
-  </div>
-
-  <div class="registration-info">
-    <hr><br>
-    <label for="Date">Check in date</label><br>
-    <input type="date" required><br>
-    <label for="Date">Check out date</label><br>
-    <input type="date" required><br>
-    <label for="yes_or_no">Do you have a roommate</label><br>
-    <select required>
-      <option></option>
-      <option value ="yes">Yes</option>
-      <option value="no">No</option>
-    </select><br><br>
-
-    <h4>Is your guest a Valparaiso University student and fully vaccinated?</h4>
-    <p>If not, you will have to upload a photo confirming proof of their vaccination.</p><br>
-    <button>Yes</button>
-    <button onclick="window.location.href = 'vaccine.html';" >No</button>
-  </div>
-   <br><br>
-    <input type="submit">
+<script src="https://smtpjs.com/v3/smtp.js" ></script>
+<script >
+  function sendEmail(){
+    Email.send({
+      Host : "smtp.gmail.com",
+      Username : "jj.johnson@valpo.edu",
+      Password : "Bravedime33",
+      To : document.getElementById("remail").value,
+      From : document.getElementById("email").value ,
+      Subject : "Res life guest form",
+      Body : "Host first name: " + document.getElementById("fname").value
+      +"<br> Host last name: "+ document.getElementById("lname").value
+      +"<br> Host email address: "+ document.getElementById("email").value
+      +"<br> Host ID number: "+ document.getElementById("id").value
+      +"<br> Host building: "+ document.getElementById("building").value
+			+"<br> Host phone number: "+ document.getElementById("pnum").value
+			+"<br> Guest First name: "+ document.getElementById("g_fname").value
+			+"<br> Guest Last name: "+ document.getElementById("g_lname").value
+			+"<br> Guest Email: "+ document.getElementById("g_email").value
+			+"<br> Guest ID number "+ document.getElementById("g_id").value
+			+"<br> Guest building: "+ document.getElementById("g_building").value
+			+"<br> Guest phone number: "+ document.getElementById("g_pnum").value
+			+"<br> Guest Emergency contact phone number: "+ document.getElementById("gem_pnum").value
+			+"<br> Guest Emergency contact Relationship: "+ document.getElementById("Relationship").value
+			+"<br> Date of guest arrival: "+ document.getElementById("date").value
+			+"<br> Date of guest departure: "+ document.getElementById("date_d").value
+			+"<br> Does the resident have a roomate: "+ document.getElementById("roommate").value
+			+"<br> Roommate okay with guest: "+ document.getElementById("agreed").value
+			+"<br> Is your guest a Valparaiso University student: "+ document.getElementById("agreed2").value
+			+"<br> Vaccine card: "+ document.getElementById("vaccine").value
 
 
-  </form>
-  </div>
-
-
-</div>
+}).then(
+  message => alert("Your res life guest form was submitted successfully")
+);
+  }
+</script>
 </body>
 </html>
