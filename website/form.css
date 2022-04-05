@@ -4,16 +4,13 @@
   box-sizing: border-box;
 }
 
-#body {
+body {
   margin: 50px;
   padding: 16px 14px;
-}
-
-body {
   background-color: #613318;
 }
 
-#form {
+#wrapper {
   align: center;
   background-color: white;
   padding: 16px 14px;
@@ -42,10 +39,17 @@ input {
 .registration-info {
   justify-content: space-between;
   padding: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 800px) {
   .collect {
+    flex-direction: column;
+  }
+  span {
+    padding: 1em;
+    display: flex;
     flex-direction: column;
   }
 }
