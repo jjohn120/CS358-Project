@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Residential Life Overnight Guest Registration</title>
+    <link rel="icon" href="SecondarySignature_Full_Web.png">
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .section-50 {
+        margin: 5px;
+        padding: 10px;
+      }
+
+      .heading-line {
+        position: relative;
+        padding-bottom: 5px;
+      }
+
+      #notification-list {
+        padding: 10px;
+      }
+
+      .notification-list_content {
+        border-left: solid 6px;
+        margin-bottom: 10px;
+        display: block;
+        padding: 20px;
+      }
+
+      .text-muted {
+        color: gray;
+      }
+
+      nav ul {
+        list-style-type: none;
+        overflow: hidden;
+      }
+
+      .logo {
+        display: flex;
+        align-self: start;
+        padding: 14px 16px;
+
+      }
+
+      nav li {
+        display: flex;
+        float: right;
+      }
+
+      .logo {
+        float: left;
+      }
+
+      nav li a {
+        color: #F0F0F0;
+        padding: 20px 16px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.5em;
+      }
+
+      #head {
+        background-color: #2f1400;
+        padding: 16px;
+        position: sticky;
+      }
+
+      nav {
+        justify-content: space-around;
+      }
+
+      nav a {
+        text-align: center;
+        text-decoration: none;
+      }
+      .dropdown {
+        display: inline-block;
+        overflow: hidden;
+        text-decoration: none;
+        font-size: 1.5em;
+      }
+
+      .dropbtn {
+        cursor: pointer;
+        padding: 20px 16px;
+        color: #F0F0F0;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        background-color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        margin: 0;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        font-size: 16px;
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+
+      .mobile-menu {
+        display: none;
+        cursor: pointer;
+      }
+
+      .mobile-menu div {
+        width: 25px;
+        height: 3px;
+        background-color: #F0F0F0;
+        margin: 5px;
+      }
+
+      @media screen and (max-width: 650px) {
+        .nav-links {
+          display: none;
+        }
+
+        .logo {
+          align-self: flex-start;
+          position: left;
+        }
+
+        .mobile-menu {
+          float: right;
+          align-self: flex-end;
+          display: initial;
+          position: right;
+          cursor: pointer;
+        }
+
+        .Navbar__ToggleShow {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+          }
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <nav aria-label="primary-navigation" id="head">
+       <ul>
+         <div class="logo">
+           <img src="SecondarySignature_Full_Web.png" alt="Valparaiso University Signature" height="50px">
+         </div>
+         <div class="mobile-menu">
+           <li><a class="menu" onclick="myFunction()">Menu</a></li>
+         </div>
+         <div class="nav-links" id='navbar'>
+           <li><a href=dashboard.html>Dashboard</a></li>
+           <li><a href=index.html>Home</a></li>
+           <li><a href="login.html">Sign In</a></li>
+           <li><div class="dropdown">
+             <button class="dropbtn">Resources</button>
+               <div class="dropdown-content">
+                 <a href="https://www.valpo.edu/reslife/current-students/overnight-guest-policy-registration/" target="_blank" rel="noopener noreferrer">
+                   Overnight guest policy</a>
+                 <a href="https://www.valpo.edu/reslife/residential-life-information/residential-life-policies/" target="_blank" rel="noopener noreferrer">
+                   Residential life policies</a>
+                 <a href="http://valpo.edu/reslife" target="_blank" rel="noopener noreferrer">
+                   Residential life website</a>
+               </div>
+           </div><li>
+           <li><a href="info.html">Form</a></li>
+           </div>
+         </ul>
+     </nav>
+     <br><br>
+
+
+<section class="section-50">
+  <div class="container" id="containerdiv">
+    <h3 class="heading-line" >Notifications </h3>
+    <div class="container" id="notification-list">
+      <div class="notification-list_content">
+           <p>Student <b>{student}</b> registered guest {guest}</p>
+           <p class="text-muted">Guest registered for {date} until {date_d}.</p>
+           <p class="text-muted"><small>In {building}</small></p>
+      </div>
+      <div class="notification-list_content">
+           <p>Student <b>{student}</b> registered guest {guest}</p>
+           <p class="text-muted">Guest registered for {date} until {date_d}.</p>
+           <p class="text-muted"><small>In {building}</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function classToggle() {
+    const navs = document.querySelectorAll('.nav-links')
+
+    navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+  }
+
+document.querySelector('.mobile-menu')
+  .addEventListener('click', classToggle);
+
+
+  const dropdownBtn = document.querySelector('.dropbtn');
+  const menuContent = document.querySelector('.dropdown-content');
+  dropdownBtn.addEventListener('click',()=>{
+     if(menuContent.style.display===""){
+        menuContent.style.display="flex";
+     } else {
+        menuContent.style.display="";
+     }
+  });
+</script>
+
+</body>
+</html>

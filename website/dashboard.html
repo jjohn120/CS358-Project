@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Residential Life Overnight Guest Registration</title>
+    <link rel="icon" href="SecondarySignature_Full_Web.png">
+    <link rel="stylesheet" href="index.css">
+    <style>
+      nav {
+        display: block;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <nav aria-label="primary-navigation" id="head">
+       <ul>
+         <div class="logo">
+           <img src="SecondarySignature_Full_Web.png" alt="Valparaiso University Signature" height="50px">
+         </div>
+         <div class="mobile-menu">
+           <li><a class="menu" onclick="myFunction()">Menu</a></li>
+         </div>
+         <div class="nav-links" id='navbar'>
+           <li><a href=dashboard.html>Dashboard</a></li>
+           <li><a href=index.html>Home</a></li>
+           <li><a href="login.html">Sign In</a></li>
+           <li><div class="dropdown">
+             <button class="dropbtn">Resources</button>
+               <div class="dropdown-content">
+                 <a href="https://www.valpo.edu/reslife/current-students/overnight-guest-policy-registration/" target="_blank" rel="noopener noreferrer">
+                   Overnight guest policy</a>
+                 <a href="https://www.valpo.edu/reslife/residential-life-information/residential-life-policies/" target="_blank" rel="noopener noreferrer">
+                   Residential life policies</a>
+                 <a href="http://valpo.edu/reslife" target="_blank" rel="noopener noreferrer">
+                   Residential life website</a>
+               </div>
+           </div><li>
+           <li><a href="info.html">Form</a></li>
+           </div>
+         </ul>
+     </nav>
+     <br><br>
+
+    <section id='body'>
+      <h2>Welcome to Reslife Overnight Guest Registration</h2>
+      <br><br>
+
+    </section>
+    <br><br>
+
+    <section style="background-image: linear-gradient(80deg, rgba(45,123,179,1), rgba(45,123,200,0)); padding: 100px;">
+      <h2>Welcome back, {name}!</h2><br>
+      <h3>You have {guests} guests in your buiding!</h3><br>
+      <sub style="font-size:1.2em"><a href=notification.html target="_blank" rel="noopener noreferrer">Click to see more</a></sub>
+    </section>
+
+    <br><br>
+
+    <section id="footer">
+      <h3>CONTACT US</h3> <br>
+      <h4><strong>Residential Life</strong></h4>
+      <p>Harre Union, 250 <br>
+      1509 Chapel Drive <br>
+      Valparaiso, IN. 46383</p>
+      <br>
+
+      <p><strong>Email:</strong> <a href="mailto:reslife@valpo.edu"> reslife@valpo.edu </a><br>
+      <strong>Phone:</strong> <a href="tel:2194645413"> 219.464.5413 </a><br>
+      <strong>Fax:</strong> 219.464.5256</p>
+    </section>
+
+
+    <script>
+      function classToggle() {
+        const navs = document.querySelectorAll('.nav-links')
+
+        navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+      }
+
+    document.querySelector('.mobile-menu')
+      .addEventListener('click', classToggle);
+
+
+      const dropdownBtn = document.querySelector('.dropbtn');
+      const menuContent = document.querySelector('.dropdown-content');
+      dropdownBtn.addEventListener('click',()=>{
+         if(menuContent.style.display===""){
+            menuContent.style.display="flex";
+         } else {
+            menuContent.style.display="";
+         }
+      });
+    </script>
+
+  </body>
+</html>
