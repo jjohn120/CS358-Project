@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Reslife Guest form </title>
+	<link rel="stylesheet" href="form.css" >
+</head>
+<body>
+  <h1>RLC Approval for stay form</h1>
+  <div id="wrapper">
+    <form onsubmit="sendEmail(); reset(); return false;">
+
+
+
+  <span><label for="fname">Your full Name</label>
+  <input type="text" name="fname" id="rname" placeholder="Your full name" required><br></span><br>
+
+  <span><label for="email">Your Email address</label>
+  <input type="email" name="remail" id="remail" placeholder="Your Email" required><br></span><br>
+
+  <span><label for="fname">Host First Name</label>
+  <input type="text" name="fname" id="fname" placeholder="Host first name" required><br></span>
+  <br>
+
+  <span><label for="Building">Host Building</label><select name="Building" placeholder="Building..." >
+
+<option value="" disabled selected hidden>Choose a building</option>
+<option id="building"value="Lankenau Hall"> Lankenau Hall </option>
+<option id="building"value="Brandt Hall">Brandt Hall </option>
+<option id="building"value="Alumni Hall">Alumni Hall </option>
+<option id="building"value="Wehrenberg Hall">Wehrenberg Hall </option>
+<option id="building"value="Guild/Memorial Hall">Guild/Memorial Hall </option>
+<option id="building"value="Beacon Hall">Beacon Hall </option>
+<option id="building"value="Promenade Apartments">Promenade Apartments </option>
+<option id="building"value="Kade-DuesenbergHouse/German Cultural Center">Kade-DuesenbergHouse/German Cultural Center</option>
+<option id="building"value="Sorority Housing Complex">Sorority Housing Complex</option>
+
+</select><br></span><br>
+
+  <span><label for="fname">Guest First Name</label>
+  <input type="text" name="fname" id="gname" placeholder="Host first name" required><br></span>
+  <br>
+
+  <span><label for="email">Host Email address</label>
+  <input type="email" name="email" id="email" placeholder="Host Email" required><br></span><br>
+
+
+    <span><label for="Date">Check in date: </label>
+    <input type="date" name="date" id="date" placeholder = "Date of arrival" required><br></span><br>
+
+    <span><label for="Date">Check out date: </label>
+    <input type="date" name="co_date" id="date_d" placeholder = "Date of departure" required><br><br></span>
+
+
+
+      <button type="submit" name="submit">Approve</button>
+      </form>
+      </div>
+      <script src="https://smtpjs.com/v3/smtp.js" ></script>
+      <script  >
+        function sendEmail(){
+          Email.send({
+            Host : "smtp.gmail.com",
+            Username : "jj.johnson@valpo.edu",
+            Password : "Bravedime33",
+            To : document.getElementById("email").value,
+            From : document.getElementById("remail").value ,
+            Subject : "Res life guest form Approval",
+            Body : "Hello "+document.getElementById("fname").value+"<br>"
+            +"Thank you for filling out the overnight guest registration form. I have received your request to have "
+            + document.getElementById("gname").value+" stay with you from "+document.getElementById("date").value+" to "
+            +document.getElementById("date_d").value+"<br>"+ document.getElementById("gname").value +" is approved to stay with you for these nights."
+            +"While"+document.getElementById("gname").value+" is staying with you, please remember that you are responsible for your guest at all times. Below is the guest policy for your reference:<br><br>"
+            +"Guests, whether they are Valpo students or not, must be escorted by their hosts at all times within the residence halls."
+            +"Guests and hosts are responsible for signing-in and signing-out with the residence hall main desk using the Guest Sign-In Sheet or related process.<br><br>"
+            +"Guests are expected to abide by all regulations which apply to their hosts. Hosts must escort their guests at all times within the residence halls."
+            +"Hosts are responsible for the actions & behaviors of their guests within the residence halls."
+            +"If a guest violates a University policy, it will be adjudicated in accordance with the appropriate judicial procedures."
+            +"Since the host is responsible for their guest(s), the host may also be held responsible for the actions of their guest(s).<br><br>"
+            +"As a reminder, all students wishing to host an approved overnight guest in their room may only do so with consent of their roommate."
+            +"Please ensure you've discussed this with your roommate and gained their consent.<br>"
+            +"When your guest arrives you can check them in at the "+document.getElementById("building").value+" Desk starting at 7 pm. They will need to be checked in each night.<br><br>"
+            +"Have a good day,<br>"
+            +document.getElementById("rname").value
+
+
+
+
+
+
+
+
+      }).then(
+        message => alert("Your res life guest form was submitted successfully")
+      );
+        }
+      </script>
+
+</body>
+</html>
