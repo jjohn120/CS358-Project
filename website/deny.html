@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Reslife Guest form </title>
+	<link rel="stylesheet" href="form.css" >
+</head>
+<body>
+  <h1>RLC Denial for guest stay form</h1>
+  <div id="wrapper">
+  		<form onsubmit="sendEmail(); reset(); return false;">
+        <span><label for="email">Your Email address</label>
+        <input type="email" name="remail" id="remail" placeholder="Your Email" required><br></span><br>
+
+  			<span><label for="email">Host Email</label>
+  			<input type="email" id="email" name="email" placeholder="Host email address" required><br></span><br>
+
+  	<span><label for="fname">Reason for denial</label><br>
+  	<textarea id="reason" name="reason" rows="4" cols="50">
+
+    </textarea><br>
+
+
+
+  			<button type="submit" name="submit">Deny</button>
+  		</form>
+  		</div>
+      <script src="https://smtpjs.com/v3/smtp.js" ></script>
+      <script  >
+        function sendEmail(){
+          Email.send({
+            Host : "smtp.gmail.com",
+            Username : "jj.johnson@valpo.edu",
+            Password : "Bravedime33",
+            To : document.getElementById("email").value,
+            From : document.getElementById("remail").value ,
+            Subject : "Res life guest form",
+            Body : document.getElementById("reason").value
+
+
+
+      }).then(
+        message => alert("Your res life guest form was submitted successfully")
+      );
+        }
+      </script>
+
+</body>
+</html>
