@@ -61,6 +61,10 @@
 
 
     <script>
+      if (document.cookie.indexOf("CrewCentreSession=Valid") == -1) {
+          location.href = "login.html";
+      }
+      
       function classToggle() {
         const navs = document.querySelectorAll('.nav-links')
 
