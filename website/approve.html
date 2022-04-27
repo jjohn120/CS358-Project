@@ -4,10 +4,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Reslife Guest form </title>
 	<link rel="stylesheet" href="form.css" >
+	<link rel="icon" href="SecondarySignature_Full_Web.png">
+
 </head>
 <body>
-  <h1>RLC Approval for stay form</h1>
-  <div id="wrapper">
+
+		<nav aria-label="primary-navigation" id="head">
+       <ul>
+         <div class="logo">
+           <img src="SecondarySignature_Full_Web.png" alt="Valparaiso University Signature" height="50px">
+         </div>
+         <div class="mobile-menu">
+           <li><a class="menu" onclick="myFunction()">Menu</a></li>
+         </div>
+         <div class="nav-links" id='navbar'>
+           <li><a href=dashboard.html>Dashboard</a></li>
+           <li><a href=index.html>Home</a></li>
+           <li><a href="login.html">Sign Out</a></li>
+           <li><div class="dropdown">
+             <button class="dropbtn">Resources</button>
+               <div class="dropdown-content">
+                 <a href="https://www.valpo.edu/reslife/current-students/overnight-guest-policy-registration/" target="_blank" rel="noopener noreferrer">
+                   Overnight guest policy</a>
+                 <a href="https://www.valpo.edu/reslife/residential-life-information/residential-life-policies/" target="_blank" rel="noopener noreferrer">
+                   Residential life policies</a>
+                 <a href="http://valpo.edu/reslife" target="_blank" rel="noopener noreferrer">
+                   Residential life website</a>
+               </div>
+           </div><li>
+           <li><a href="info.html">Form</a></li>
+           </div>
+         </ul>
+     </nav>
+		 <div id="wrapper">
+
+
+  <h1>RLC Approval for stay form</h1><br>
     <form onsubmit="sendEmail(); reset(); return false;">
 
 
@@ -24,18 +56,18 @@
 
   <span><label for="Building">Host Building</label><select name="Building" placeholder="Building..." >
 
-<option value="" disabled selected hidden>Choose a building</option>
-<option id="building"value="Lankenau Hall"> Lankenau Hall </option>
-<option id="building"value="Brandt Hall">Brandt Hall </option>
-<option id="building"value="Alumni Hall">Alumni Hall </option>
-<option id="building"value="Wehrenberg Hall">Wehrenberg Hall </option>
-<option id="building"value="Guild/Memorial Hall">Guild/Memorial Hall </option>
-<option id="building"value="Beacon Hall">Beacon Hall </option>
-<option id="building"value="Promenade Apartments">Promenade Apartments </option>
-<option id="building"value="Kade-DuesenbergHouse/German Cultural Center">Kade-DuesenbergHouse/German Cultural Center</option>
-<option id="building"value="Sorority Housing Complex">Sorority Housing Complex</option>
+		<option value="" disabled selected hidden>Choose a building</option>
+		<option id="building"value="Lankenau Hall"> Lankenau Hall </option>
+		<option id="building"value="Brandt Hall">Brandt Hall </option>
+		<option id="building"value="Alumni Hall">Alumni Hall </option>
+		<option id="building"value="Wehrenberg Hall">Wehrenberg Hall </option>
+		<option id="building"value="Guild/Memorial Hall">Guild/Memorial Hall </option>
+		<option id="building"value="Beacon Hall">Beacon Hall </option>
+		<option id="building"value="Promenade Apartments">Promenade Apartments </option>
+		<option id="building"value="Kade">Kade-Duesenberg German House</option>
+		<option id="building"value="Sorority Housing Complex">Sorority Housing Complex</option>
 
-</select><br></span><br>
+	</select><br></span><br>
 
   <span><label for="fname">Guest First Name</label>
   <input type="text" name="fname" id="gname" placeholder="Host first name" required><br></span>
@@ -56,6 +88,27 @@
       <button type="submit" name="submit">Approve</button>
       </form>
       </div>
+			<script>
+				function classToggle() {
+					const navs = document.querySelectorAll('.nav-links')
+
+					navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+				}
+
+			document.querySelector('.mobile-menu')
+				.addEventListener('click', classToggle);
+
+
+				const dropdownBtn = document.querySelector('.dropbtn');
+				const menuContent = document.querySelector('.dropdown-content');
+				dropdownBtn.addEventListener('click',()=>{
+					 if(menuContent.style.display===""){
+							menuContent.style.display="flex";
+					 } else {
+							menuContent.style.display="";
+					 }
+				});
+			</script>
       <script src="https://smtpjs.com/v3/smtp.js" ></script>
       <script  >
         function sendEmail(){
@@ -82,11 +135,6 @@
             +"When your guest arrives you can check them in at the "+document.getElementById("building").value+" Desk starting at 7 pm. They will need to be checked in each night.<br><br>"
             +"Have a good day,<br>"
             +document.getElementById("rname").value
-
-
-
-
-
 
 
 
