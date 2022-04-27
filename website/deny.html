@@ -3,28 +3,75 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Reslife Guest form </title>
+	<link rel="icon" href="SecondarySignature_Full_Web.png">
 	<link rel="stylesheet" href="form.css" >
 </head>
 <body>
+	<nav aria-label="primary-navigation" id="head">
+		 <ul>
+			 <div class="logo">
+				 <img src="SecondarySignature_Full_Web.png" alt="Valparaiso University Signature" height="50px">
+			 </div>
+			 <div class="mobile-menu">
+				 <li><a class="menu" onclick="myFunction()">Menu</a></li>
+			 </div>
+			 <div class="nav-links" id='navbar'>
+				 <li><a href=dashboard.html>Dashboard</a></li>
+				 <li><a href=index.html>Home</a></li>
+				 <li><a href="login.html">Sign Out</a></li>
+				 <li><div class="dropdown">
+					 <button class="dropbtn">Resources</button>
+						 <div class="dropdown-content">
+							 <a href="https://www.valpo.edu/reslife/current-students/overnight-guest-policy-registration/" target="_blank" rel="noopener noreferrer">
+								 Overnight guest policy</a>
+							 <a href="https://www.valpo.edu/reslife/residential-life-information/residential-life-policies/" target="_blank" rel="noopener noreferrer">
+								 Residential life policies</a>
+							 <a href="http://valpo.edu/reslife" target="_blank" rel="noopener noreferrer">
+								 Residential life website</a>
+						 </div>
+				 </div><li>
+				 <li><a href="info.html">Form</a></li>
+				 </div>
+			 </ul>
+	 </nav>
+	<div id="wrapper">
   <h1>RLC Denial for guest stay form</h1>
-  <div id="wrapper">
+	<br>
   		<form onsubmit="sendEmail(); reset(); return false;">
-        <span><label for="email">Your Email address</label>
+        <span><label for="remail">Your Email address</label>
         <input type="email" name="remail" id="remail" placeholder="Your Email" required><br></span><br>
 
-  			<span><label for="email">Host Email</label>
-  			<input type="email" id="email" name="email" placeholder="Host email address" required><br></span><br>
+  			<span><label for="hemail">Host Email</label>
+  			<input type="email" id="hemail" name="hemail" placeholder="Host email address" required><br></span><br>
 
-  	<span><label for="fname">Reason for denial</label><br>
-  	<textarea id="reason" name="reason" rows="4" cols="50">
-
-    </textarea><br>
-
-
+		  	<span><label for="reason">Reason for Denial</label><br><br>
+		  	<textarea id="reason" name="reason" rows="4" cols="50" spellcheck="true" placeholder="E.g. max number of nights, student not allowed to host guests, invalid vaccination, etc."></textarea></span>
+				<br>
 
   			<button type="submit" name="submit">Deny</button>
   		</form>
   		</div>
+			<script>
+				function classToggle() {
+					const navs = document.querySelectorAll('.nav-links')
+
+					navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
+				}
+
+			document.querySelector('.mobile-menu')
+				.addEventListener('click', classToggle);
+
+
+				const dropdownBtn = document.querySelector('.dropbtn');
+				const menuContent = document.querySelector('.dropdown-content');
+				dropdownBtn.addEventListener('click',()=>{
+					 if(menuContent.style.display===""){
+							menuContent.style.display="flex";
+					 } else {
+							menuContent.style.display="";
+					 }
+				});
+			</script>
       <script src="https://smtpjs.com/v3/smtp.js" ></script>
       <script  >
         function sendEmail(){
