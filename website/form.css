@@ -10,6 +10,10 @@ body {
   background-color: #613318;
 }
 
+select {
+  margin-left: 10px;
+}
+
 #wrapper {
   align: center;
   background-color: white;
@@ -28,6 +32,10 @@ span {
 input {
   border: 0;
   border-bottom: 1px solid #e0e0e0;
+}
+
+textarea {
+  border: 1.5px solid #e0e0e0;
 }
 
 .host-info, .guest-info  {
@@ -52,4 +60,125 @@ input {
     display: flex;
     flex-direction: column;
   }
+}
+
+nav ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.logo {
+  display: flex;
+  align-self: start;
+  padding: 14px 16px;
+
+}
+
+nav li {
+  display: flex;
+  float: right;
+}
+
+.logo {
+  float: left;
+}
+
+nav li a {
+  color: #F0F0F0;
+  padding: 20px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+#head {
+  background-color: #2f1400;
+  padding: 16px;
+  position: sticky;
+}
+
+nav {
+  justify-content: space-around;
+}
+
+nav a {
+  text-align: center;
+  text-decoration: none;
+}
+.dropdown {
+  display: inline-block;
+  overflow: hidden;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.dropbtn {
+  cursor: pointer;
+  padding: 20px 16px;
+  color: #F0F0F0;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  font-size: 16px;
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: #F0F0F0;
+  margin: 5px;
+}
+
+@media screen and (max-width: 650px) {
+  .nav-links {
+    display: none;
+  }
+
+  .logo {
+    align-self: flex-start;
+    position: left;
+  }
+
+  .mobile-menu {
+    float: right;
+    align-self: flex-end;
+    display: initial;
+    position: right;
+    cursor: pointer;
+  }
+
+  .Navbar__ToggleShow {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+    }
+
 }
