@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Residential Life Overnight Guest Registration</title>
     <link rel="icon" href="SecondarySignature_Full_Web.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       *{
         margin: 0;
@@ -157,6 +158,16 @@
 
       }
 
+      #approved_content {
+        display: none;
+      }
+
+      .heading-line {
+        text-decoration: none;
+        text-color: black;
+        font-size: 1.5em;
+      }
+
     </style>
   </head>
   <body>
@@ -171,7 +182,7 @@
          <div class="nav-links" id='navbar'>
            <li><a href=dashboard.html>Dashboard</a></li>
            <li><a href=index.html>Home</a></li>
-           <li><a href="login.html">Sign In</a></li>
+           <li><a href="login.html">Sign Out</a></li>
            <li><div class="dropdown">
              <button class="dropbtn">Resources</button>
                <div class="dropdown-content">
@@ -192,18 +203,41 @@
 
 <section class="section-50">
   <div class="container" id="containerdiv">
-    <h3 class="heading-line" >Notifications </h3>
+    <h2 class="heading-line" >Notifications </h2>
     <div class="container" id="notification-list">
-      <div class="notification-list_content">
-           <p>Student <b>{student}</b> registered guest {guest}</p>
-           <p class="text-muted">Guest registered for {date} until {date_d}.</p>
-           <p class="text-muted"><small>In {building}</small></p>
+      <div class="container-list" id="pending-list">
+        <a class="heading-line" role="button" href="" aria-expanded="true">Pending guests <i class="fa fa-caret-down"></i></a>
+          <div class="pendContentList">
+            <div class="notification-list_content" id="pending_content">
+             <p>Student <b>{student}</b> registered guest {guest}</p>
+             <p class="text-muted">Guest registered for {date} until {date_d}.</p>
+             <p class="text-muted"><small>In {building}</small></p>
+           </div>
+           <div class="notification-list_content" id="pending_content">
+             <p>Student <b>{student}</b> registered guest {guest}</p>
+             <p class="text-muted">Guest registered for {date} until {date_d}.</p>
+             <p class="text-muted"><small>In {room_number} {building}</small></p>
+           </div>
+        </div>
       </div>
-      <div class="notification-list_content">
-           <p>Student <b>{student}</b> registered guest {guest}</p>
-           <p class="text-muted">Guest registered for {date} until {date_d}.</p>
-           <p class="text-muted"><small>In {building}</small></p>
+
+      <div class="container-list" id="approved-list">
+        <a class="heading-line" role="button" href="" aria-expanded="false" onclick="approvedListToggle()">Approved guests <i class="fa fa-caret-down"></i> </a>
+        <div class="appContentList">
+          <div class="notification-list_content" id="approved_content">
+             <p>Student <b>{student}</b> registered guest {guest}</p>
+             <p class="text-muted">Guest registered for {date} until {date_d}.</p>
+             <p class="text-muted"><small>In {building}</small></p>
+           </div>
+           <div class="notification-list_content" id="approved_content">
+             <p>Student <b>{student}</b> registered guest {guest}</p>
+             <p class="text-muted">Guest registered for {date} until {date_d}.</p>
+             <p class="text-muted"><small>In {room_number} {building}</small></p>
+           </div>
+         </div>
       </div>
+
+
     </div>
   </div>
 </section>
@@ -215,8 +249,8 @@
     navs.forEach(nav => nav.classList.toggle('Navbar__ToggleShow'));
   }
 
-document.querySelector('.mobile-menu')
-  .addEventListener('click', classToggle);
+  document.querySelector('.mobile-menu')
+    .addEventListener('click', classToggle);
 
 
   const dropdownBtn = document.querySelector('.dropbtn');
@@ -228,6 +262,35 @@ document.querySelector('.mobile-menu')
         menuContent.style.display="";
      }
   });
+
+  //not displaying when clicked
+  //also change caret_down
+  function approvedListToggle() {
+    const approvedList = getElementById('approved-list');
+    const approvedContent = getElementById('appContentList');
+    approvedList.addEventListener('click',()=>{
+       if(approvedContent.style.display===""){
+          approvedContent.style.display="flex";
+       } else {
+          approvedContent.style.display="";
+       }
+    });
+  }
+
+  //not collapsing when clicked
+  //also change caret_down
+  function pendingListToggle() {
+    const approvedList = getElementById('pending-list');
+    const approvedContent = getElementById('pendContentList');
+    approvedList.addEventListener('click',()=>{
+       if(approvedContent.style.display==="flex"){
+          approvedContent.style.display="none";
+       } else {
+          approvedContent.style.display="flex";
+       }
+    });
+  }
+
 </script>
 
 </body>
