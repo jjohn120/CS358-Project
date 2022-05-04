@@ -10,6 +10,13 @@ body {
   background-color: #613318;
 }
 
+body, html {
+    font-family: "Gotham A","Gotham B",Helvetica,Arial;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    color: #2f1400;
+}
+
 select {
   margin-left: 10px;
 }
