@@ -48,12 +48,11 @@ if (isset($_POST['username'])){
         box-sizing: border-box;
       }
 
-      body {
-        padding: 14px;
-        min-height: 100vh;
-        width: 100%;
-        display: grid;
-        background-color: gray;
+      body, html {
+          font-family: "Gotham A","Gotham B",Helvetica,Arial;
+          -webkit-font-smoothing: antialiased;
+          font-weight: 400;
+          color: #2f1400;
       }
 
       .sign-in {
