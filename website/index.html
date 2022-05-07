@@ -11,14 +11,14 @@
     <nav aria-label="primary-navigation" id="head">
        <ul>
          <div class="logo">
-           <img src="SecondarySignature_Full_Web.png" alt="Valparaiso University Signature" height="50px">
+           <img src="SecondarySignature_Full.png" alt="Valparaiso University Signature" height="50px">
          </div>
          <div class="mobile-menu">
            <li><a class="menu" onclick="myFunction()">Menu</a></li>
          </div>
          <div class="nav-links" id='navbar'>
            <li><a href=index.html>Home</a></li>
-           <li><a href="login.html">Sign Out</a></li>
+           <li><a href="login.php">Sign Out</a></li>
            <li><div class="dropdown">
              <button class="dropbtn">Resources</button>
                <div class="dropdown-content">
@@ -43,7 +43,7 @@
     </section>
     <br><br>
 
-    <img class="banner" src="20210821_JLH_Move_In_Day-004.jpg" alt="Photo of residence hall with the text Go Beacons written on its windows">
+    <img class="banner" src="Res_pic.jpg" alt="Photo of residence hall with the text Go Beacons written on its windows">
 
 
       <section id="footer">
@@ -60,9 +60,7 @@
       </section>
 
     <script>
-    if (document.cookie.indexOf("CrewCentreSession=Valid") == -1) {
-        location.href = "login.html";
-    }
+
 
       function classToggle() {
         const navs = document.querySelectorAll('.nav-links')
